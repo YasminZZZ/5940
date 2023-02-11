@@ -1,0 +1,418 @@
+
+.team a {
+  color: black;
+}
+
+.logo {
+  padding-top: 20px;
+
+}
+
+.logo img {
+  width: 22%;
+
+}
+
+.logo a {
+  float: right;
+  padding: 25px;
+}
+
+.bi .bi-list .mobile-nav-toggle {
+  padding-left: 30px;
+  margin-top: 10%;
+}
+
+#bgblack {
+  background-color: black;
+}
+
+#indexblack {
+  color: white;
+  font-size: x-large;
+}
+
+.pricing .box {
+
+  background: #ff8f1d;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing .box .btn-buy {
+
+  padding: 10px 40px 12px 40px;
+
+  border: 2px solid black;
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.pricing .box ul {
+  padding: 0;
+  list-style: none;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.pricing .box ul .na {
+  color: black;
+  text-decoration: line-through;
+}
+
+.pricing .box h4 span {
+  color: black;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.pricing .recommended .btn-buy {
+  background: black;
+  color: #fff;
+}
+
+.pricing .recommended-badge {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-size: 12px;
+  padding: 4px 25px 6px 25px;
+  background: black;
+  color: white;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+#loginform {
+  padding: 2%;
+  border: 3px solid black;
+  background-color: white;
+  border-radius: 0;
+}
+
+.form-group {
+  padding: 5%;
+}
+
+input {
+  margin-top: 5%;
+  border-bottom: 1px, solid, black;
+}
+
+#loginbody {
+  background-color: #fac202;
+  padding: 10%;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid black;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#formtitle {
+  padding: 5%;
+  text-align: center;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: black;
+  border: 2px solid;
+  border-color: black;
+  border-radius: 0%;
+  font-weight: 700;
+}
+.btn-primary:hover {
+  color: black !important;
+  background-color: whitesmoke !important;
+  border-color: black;
+}
+
+.btn-secondary {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 0%;
+  font-weight: 700;
+}
+
+.btn-secondary:hover {
+  color: white !important;
+  background-color: black !important;
+}
+
+
+#footerfooter {
+  color: white;
+  background-color: #444444;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #444444;
+  z-index: 1;
+  color: #888888;
+}
+
+#footer .footer-bottom {
+  border: none;
+}
+
+.py-5 {
+  padding-top: 2rem !important;
+  padding-bottom: 1rem !important;
+
+}
+
+#mailbox::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+#mailbox:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+#mailbox::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+.member-info {
+  padding: 10%;
+  margin-bottom: 3%;
+}
+
+#exhibitionsimg {
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: repeat-x repeat-y;
+}
+
+
+#detailsearch {
+  background-color: whitesmoke;
+  padding-top: 2%;
+  padding-right: 8%;
+  padding-bottom: 2%;
+  padding-left: 8%;
+  margin-bottom: 3%;
+}
+
+#exhibitionstitle {
+  margin: 7% 5% 7% 2% !important;
+  font-weight: 900;
+}
+
+h1 h2 h3 h4 h5 h6 p {
+  font-family: 'Noto Sans SC', sans-serif;
+
+}
+
+h1 {
+  font-weight: 900;
+  color: black;
+  font-size: 3rem;
+}
+
+h4 {
+  font-weight: 900;
+  color: black;
+  font-size: 2rem;
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: black;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 1rem;
+  color: black;
+}
+
+#exhibitiontitle>h5 {
+  font-weight: 900;
+}
+
+p {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: black;
+}
+
+.navbar>.container>ul>li>a {
+  font-weight: 900;
+  font-size: x-large;
+}
+
+.navbar>.container>ul>ul>li>a {
+  font-weight: 900;
+  font-size: x-large;
+}
+
+.navbar-brand {
+  font-weight: 900;
+  font-size: x-large;
+  color: #ff8f1d;
+}
+
+#lovelyhover:hover {
+  border-bottom: 3px solid black;
+}
+
+a {
+  background: none;
+}
+
+a:hover {
+  background: none;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: black;
+  background: none;
+  border: none;
+}
+
+.btn-outline-dark {
+  color: #212529;
+  border: 2px solid black;
+  border-radius: 0;
+  border-color: #212529;
+  font-weight: 700;
+  /* padding: 0; */
+  margin: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: whitesmoke;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+
+  position: absolute;
+  top: 100px;
+  right: 40px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+#loginform>form>div>label {
+margin:10px;
+font-family: 'Noto Sans SC', sans-serif;
+font-weight: 700;
+color: black;
+font-size:1rem;
+padding-top:0 ;
+}
+#loginform>form>div>input {
+margin-top:0;
+margin-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+  #header {
+    height: 85px;
+  }
+}
+
+.navbar-mobile {
+  background: whitesmoke;
+}
+.form-group{
+padding-top: 0;
+padding-top: 0;
+}
+#pages:hover {
+text-decoration: underline;
+}
+#pages {
+padding: 5%;
+}
+
+
+#newblog{
+position: fixed;
+visibility: visible;
+opacity: 0;
+
+top: 120px;
+right: 50px;
+z-index: 996;
+background: whitesmoke;
+width: 60px;
+height: 60px;
+border-radius: 4px;
+transition: all 0.4s;
+}
+
+.back-to-top {
+
+background: #ff8f1d;
+width: 42px;
+height: 42px;
+right: 60px;
+
+}
+.form-control:focus {
+color: #212529;
+background-color: #fff;
+border-color: black;
+outline: 0;
+box-shadow: none;
+}

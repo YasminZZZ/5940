@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% block header %}
+<!-- Page Header-->
+<header class="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-10 mx-auto" id="exhibitionstitle">
+                <div class="site-heading">
+                    <h1>展览资讯</h1>
+                    <h1>EXHIBITIONS</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container-fluid" id="detailsearch">
+    <div class="position-relative w-100">
+        <form action="{{ url_for('search2')}}" method="GET" class="form-inline my-2 my-lg-0">
+            <div>
+                <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="查找展览"
+                    aria-label="Search" name="keyword" id="searched">
+                <button class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2 search-btn">搜索</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="row" style="margin-top:5% ;margin-bottom: 3%;">
+        <div class="col-12 col-lg-7 row">
+            <div class="col-12 col-md-3" style="padding: 0;text-align: center;">
+                <h5>按区筛选</h5>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <form class="col-3 " action="{{ url_for('filterjj')}}" method="GET"
+                        style="text-align: center;padding: 0;">
+                        <button type="submit" class="btn btn-outline-dark" style="width: 100%;">锦江区</button>
+                    </form>
+                    <form class="col-3" action="{{ url_for('filterqy')}}" method="GET"
+                        style="text-align: center;padding: 0;">
+                        <button type="button" class="btn btn-outline-dark" style="width: 100%;">青羊区</button>
+                    </form>
+                    <form class="col-3" action="{{ url_for('filterjn')}}" method="GET"
+                        style="text-align: center;padding: 0;">
+                        <button  class="btn btn-outline-dark" style="width: 100%;">金牛区</button>
+                    </form>
+                    <form class="col-3" action="{{ url_for('filterwh')}}" method="GET"
+                        style="text-align: center;padding: 0;">
+                        <button  class="btn btn-outline-dark" style="width: 100%;">武侯区</button>
+                    </form>
+                    <form class="col-3" action="{{ url_for('filterch')}}" method="GET"
+                        style="text-align: center;padding: 0;">
+                        <button class="btn btn-outline-dark" style="width: 100%;">成华区</button>
+                    </form>
+                    <form class="col-3" action="{{ url_for('filtergx')}}" method="GET"
+                        style="text-align: center;padding: 0;">
+                        <button class="btn btn-outline-dark" style="width: 100%;">高新区</button>
+                    </form>
+                    <form class="col-3" action="{{ url_for('filtertf')}}" method="GET"
+                        style="text-align: center;padding: 0;">
+                        <button class="btn btn-outline-dark" style="width: 100%;">天府新区</button>
+                    </form>
+                    <form class="col-3"  method="GET"
+                        style="text-align: center;padding: 0;">
+                        <a href="/exhibitions"><button type="button" class="btn btn-outline-dark" style="width: 100%;">查看全部</button></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-5 row">
+            <div class="col-12 col-md-3" style="padding: 0;text-align: center;">
+                <h5>排序</h5>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <form class="col-4" action="{{ url_for('newest')}}" method="GET" style="text-align: center;padding: 0;">
+                        <button class="btn btn-outline-dark" style="width: 100%;">最新</button>
+                    </form>
+                    <form class="col-4" action="{{ url_for('oldest')}}" method="GET" style="text-align: center;padding: 0;">
+                        <button  class="btn btn-outline-dark" style="width: 100%;">即将结束</button>
+                    </form>
+                    <form class="col-4" method="GET" style="text-align: center;padding: 0;">
+                       <a href="/exhibitions"> <button class="btn btn-outline-dark" style="width: 100%;">默认排序</button></a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+{% block content %}
+
+
+
+<!-- Main Content-->
+<!-- <section id="team" class="team"> -->
+<section>
+    <div class="container">
+
+
+        <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch"> -->
+
+        {% for exhibition in exhibitions.items %}
+        {% if loop.index == 1 %}{% set counter = ( counter | default(1) ) %}{% endif %}
+        {% if counter == 1 %}
+        <div class="row">
+            {% endif %}
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch ">
+                <div class="member" data-aos="zoom-in">
+                    <div class="member-img" style="height:400px; background-image:url('{{exhibition.images}}');"
+                        id="exhibitionsimg">
+                        <!-- <img src="{{exhibition.images}}" class="img-fluid" alt="" style="height:300px ;"> -->
+                    </div>
+                    <div class="member-info">
+                        <div id="exhibitiontitle">
+                            <h5><a href="/exhibition_detail/{{exhibition.id}}"
+                                    class="link-secondary">{{exhibition.title}}</a></h5>
+                        </div>
+                        <span>
+                            <h6>{{exhibition.date}}
+                                <br>
+                                {{exhibition.gallery}}
+                            </h6>
+                        </span>
+
+                        <p>{{exhibition.brief}}</p>
+                    </div>
+                </div>
+            </div>
+            {% if counter == 3 %}
+        </div>
+
+        {% set counter = ( counter | default(1) ) %}{% else %}{% set counter = ( counter | default(0) ) + 1 %}{%
+        endif %}
+
+        {% endfor %}
+
+        <!-- </div> -->
+    </div>
+    <div class="container" style="float:left;">
+        <center>
+            <h5 style="margin: 5%;"> 页码:
+                {% for page in exhibitions.iter_pages() %}
+                {% if page %}
+                <a href="{{url_for('exhibitions')}}/{{ page }}" id="pages">{{ page }}</a>
+                {% else %}
+                ...
+                {% endif %}
+                {% endfor %}
+            </h5>
+        </center>
+    </div>
+</section>
+{% endblock %}

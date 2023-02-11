@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block header %}
+<!-- Page Header-->
+        <header class="masthead">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row" style="max-height: 330px; margin-top: -5%;">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="site-heading">
+                            <h1>Dashboard</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+{% endblock %}
+{% block content %}
+        <!-- Main Content-->
+        <div class="container">
+                <div class="row mobile-disabled">     
+                    <div class="col-lg-1">ID</div>
+                    <div class="col-lg-6">Title</div>
+                    <div class="col-lg-1">Author</div>
+                    <div class="col-lg-2">Date</div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-1"></div>
+                </div><!-- row -->
+                {% for blog in blogs.items %}
+                <div class="row"> 
+                    <div class="col-lg-1">{{blog.id}}</div>
+                    <div class="col-lg-6">{{blog.title}}</div>
+                    <div class="col-lg-1">{{blog.author}}</div>
+                    <div class="col-lg-2">{{blog.post_date.strftime('%m-%d-%Y')}}</div>
+                    <div class="col-lg-1"><a href="/blog/{{blog.id}}" class="btn btn-primary pull-right">Edit</a></div>
+                    <div class="col-lg-1">
+                        <!--a href="#" class="btn btn-danger">Delete</a-->
+                        <form action="/blog/{{blog.id}}" method="POST">
+                            <input type="hidden" name="title" value="{{blog.title}}">
+                            <input type="hidden" name="body" value="{{blog.body}}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form> 
+                    </div>
+                 </div><!-- row -->
+                {% endfor %}
+        </div>
+ <div class="container" style="float: none;">
+  Page:    
+  {% for page in blogs.iter_pages() %}  
+    {% if page %}
+        <a href="{{url_for('dashboard')}}/{{ page }}">{{ page }}</a>
+    {% else %}
+        ...
+    {% endif %}
+  {% endfor %}    
+  </div>
+{% endblock %}

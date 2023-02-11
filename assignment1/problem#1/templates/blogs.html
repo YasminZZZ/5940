@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block header %}
+<header class="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-10 mx-auto" id="exhibitionstitle">
+                <div class="site-heading">
+                    <h1>社区</h1>
+                    <h1>COMMUNITY</h1>
+                    <h4>好展推荐 看展体验 ... 尽情分享</h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container-fluid" id="detailsearch">
+    <div class="position-relative w-100">
+        <form action="{{ url_for('search')}}" method="GET" class="form-inline my-2 my-lg-0">
+            <div>
+                <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="查找动态"
+                    aria-label="Search" name="keyword" id="searched">
+                <button class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2 search-btn">搜索</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}
+{% block content %}
+
+
+<!-- Main Content-->
+<div class="contanier">
+    
+<div class="container">
+        <div class="contianer">
+            <!-- <form action="{{ url_for('search')}}" method="GET" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="search" aria-label="Search" name="keyword" id="searched">
+        <button class="btn btn-outline-success my-2 my-sum-0 search-btn" type="submit">search</button>
+    </form> -->
+
+            {% for blog in blogs.items %}
+            {% if loop.index == 1 %}{% set counter = ( counter | default(1) ) %}{% endif %}
+            {% if counter == 1 %}
+            <div class="row">
+                {% endif %}
+                <div class="col-md-4" style="padding:3% ;">
+                    <div class="thumbnail blog-box"  id="loginform" style="padding: 6%;">
+                        <p>
+                            
+                            <a href="/blog_details/{{blog.id}}">
+                                <h4 class="post-title">{{blog.title}}</h4>
+                            </a>
+                            
+                        </p>
+                        <div class="feedback-group">
+                            <h5 style="padding:1% ;"><i class="bi bi-eye-fill"></i> {{blog.views}}&nbsp;&nbsp;
+                            <i class="bi bi-chat-square-fill"></i> {{blog.comments}}</h5>
+                            <p class="" >
+                                <h6>By {{blog.author}} <br> {{blog.post_date.strftime('%m-%d-%Y')}}</h6>
+                            </p>
+                            <!-- class="badge badge-warning badge-pill" -->
+                            <!--  class="badge badge-success badge-pill" -->
+                        </div>
+                        <!--end btn-group-->
+                    </div><!-- end thumbnail product box-->
+                </div><!-- end col -->
+                {% if counter == 3 %}
+            </div>
+            <!--end row-->{% set counter = ( counter | default(1) ) %}{% else %}{% set counter = ( counter | default(0)
+            ) + 1 %}{% endif %}
+            {% endfor %}
+        </div>
+
+
+        <div class="container">
+            <div class="container">
+                <center>
+                    <h5 style="margin: 5%;"> 页码:
+                        {% for page in blogs.iter_pages() %}
+                        {% if page %}
+                        <a href="{{url_for('blogs')}}/{{ page }}" id="pages">{{ page }}</a>
+                        {% else %}
+                        ...
+                        {% endif %}
+                        {% endfor %}
+                    </h5>
+                </center>
+            </div>
+            <!-- page:
+            {% for page in blogs.iter_pages() %}
+            {% if page %}
+            <a href="{{url_for('blogs')}}/{{ page }}">{{ page}}</a>
+            {% else %}
+            ...
+            {% endif %}
+            {% endfor %}
+        </div> -->
+    </div>
+
+</div>
+</div>
+{% endblock %}

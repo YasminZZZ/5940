@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block header %}
+<header class="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-10 mx-auto" id="exhibitionstitle">
+                <div class="site-heading">
+                    <h1>展馆详情</h1>
+                    <h1>GALLERY DETAIL</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}
+{% block content %}
+
+
+<div id="111">
+    <div class="container" style="padding-left: 5%;padding-right:5%;">
+        <div>
+            {% for gallery in galleries %}
+            <h1>{{gallery.name}}</h1>
+            <hr>
+            <div>
+                <h5>{{gallery.time}}<br>{{gallery.place}}</h5>
+            </div>
+
+            {% endfor %}
+        </div>
+
+
+        <div style="margin-bottom: 5%;">
+            <button class="btn-outline-dark">分享</button>
+            <a class="scrollto" href="#mapmap"><button class="btn-outline-dark">路线</button></a>
+            <button class="bt1 btn-outline-dark"> <i class="bi bi-heart-fill"></i>收藏 </button>
+        </div>
+
+        <div>
+            {% for gallery in galleries %}
+            <div>{{ gallery.body }}</div>
+            <div class="col-12" style="align-items: center;">
+                <center><img src="{{ gallery.images }}" class="img-fluid" alt=""></center>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="container"></div>
+</div>
+{% for gallery in galleries %}
+<div class="iframediv col-12" id="mapmap">
+
+    <center><iframe src="{{ gallery.maplink }}" title="CDgallery"></iframe></center>
+</div>
+{% endfor %}
+<div></div>
+{% endblock %}

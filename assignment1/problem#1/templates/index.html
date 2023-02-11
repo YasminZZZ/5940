@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+{% block header %}
+<div class="row">
+  <div class="col-sm-7" style="padding: 0;">
+    <img src="{{url_for('static',filename='assets/img/banner3.jpg')}}" class="img-fluid" alt=""
+      style="width: 100%;height:100%;">
+  </div>
+  <div class="col-sm-5" style="background-color:#fac202;padding:6% 2% 6% 2% ;text-align: center;" id="indexblack">
+      <h1><a href="/exhibitions" id="lovelyhover">周末去看展吧！</a></h1><br>
+    <h4><a href="/exhibitions" id="lovelyhover">探索成都展讯</a></h4>
+  </div>
+</div>
+<div class="row">
+
+  <div class="col-sm-5" style="background-color:#ff8f1d;padding:6% 2% 6% 2% ;text-align: center;" id="indexblack">
+    <h1><a href="/galleries" id="lovelyhover">成都有哪些展馆？</a></h1><br>
+    <h4><a href="/galleries" id="lovelyhover">了解成都展馆信息</a></h4>
+  </div>
+  <div class="col-sm-7" style="padding: 0;"><img src="{{url_for('static',filename='assets/img/banner4.jpg')}}"
+      class="img-fluid" alt="" style="width: 100%;height:100%;">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-7" style="padding: 0;"><img src="{{url_for('static',filename='assets/img/banner2.jpg')}}"
+      class="img-fluid" alt="" style="width: 100%;height:100%;">
+  </div>
+  <div class="col-sm-5" style="background-color:#08aed8; padding:6% 2% 6% 2% ;text-align: center;" id="indexblack">
+    <h1><a href="/blogs" id="lovelyhover">来社区</a>
+    </h1><br>
+      <h4><a href="/blogs" id="lovelyhover">分享看展体验：）</a></h4>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+
+<!-- <div class="container">
+<div class="col-md-6">
+<img src="{{url_for('static',filename='assets/img/about.jpg')}}" class="col-md-6">
+</div>
+<div class="col-md-6" id="bgblack">
+<h4>this is our fight song</h4>
+</div>
+</div> -->
+<main id="main">
+
+  <header class="masthead">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto" id="exhibitionstitle">
+          <div class="site-heading">
+            <h1>展品</h1>
+            <h1>EXHIBITS</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <!-- <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div> -->
+
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <a href="/exhibition_detail/2"><img src="static/assets/img/cro1.jpg" class="mx-auto d-block" style="height: 420px;">
+        <center></a>
+          <h4 style="margin-top: 5%;">《贝尔纳多·塞伦塔诺肖像》</h4>
+          <h5>多梅尼科·莫雷利，1859</h5>
+          <a href="/exhibition_detail/2"><h6>百年无极-意大利国家现当代美术馆藏艺术大师真迹展</h6></a>
+        </center>
+      </div>
+
+      <div class="carousel-item" data-bs-interval="2000">
+        <a href="/exhibition_detail/2"><img src="static/assets/img/cro2.jpg" class="mx-auto d-block" style="height: 420px;"></a>
+        <center>
+
+          <h4 style="padding-top: 5%;">《成角的线条》</h4><h5>瓦西里·康定斯基，1930年</h5>
+          <a href="/exhibition_detail/2"><h6>百年无极-意大利国家现当代美术馆藏艺术大师真迹展</h6></a>
+        </center>
+      </div>
+
+
+      <div class="carousel-item" data-bs-interval="2000">
+        <a href="/exhibition_detail/26"><img src="static/assets/img/cro3.jpg" class="mx-auto d-block" style="height: 420px;"></a>
+        <center>
+          <h4 style="margin-top: 5%;">维多利亚女王鼻烟盒</h4><h5>德国哈瑙，1837年</h5>
+
+          <a href="/exhibition_detail/26"><h6>「珍·藏」英国V&A博物馆馆藏吉尔伯特藏品展</h6></a>
+        </center>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <a href="/exhibition_detail/10"><img src="static/assets/img/cro4.jpeg" class="mx-auto d-block" style="height: 420px;"></a>
+        <center>
+          <h4 style="margin-top: 5%;">《阳羡帖》</h4><h5>苏轼，北宋，旅顺博物馆藏</h5>
+          <a href="/exhibition_detail/10"><h6>「高山仰止·回望东坡」苏轼主题文物特展</h6></a>
+        </center>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <section id="membership">
+
+    <header class="masthead">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-10 mx-auto" id="exhibitionstitle">
+            <div class="site-heading">
+              <h1>网站会员</h1>
+              <h1>MEMBERSHIP</h1>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing section-bg">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="box" data-aos="zoom-in" data-aos-delay="100" id="loginform" style="background-color: #ff8f1d;">
+                <span class="recommended-badge" style="padding-top: 2%;">目前</span>
+              <h3>免费</h3>
+              <h4><sup>¥</sup>0<span> / month</span></h4>
+              <ul>
+                <li>浏览展讯 浏览动态</li>
+                <li>展讯投稿</li>
+                <li class="na">收藏夹 发布动态</li>
+                <li class="na">展览日历</li>
+              </ul>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+            <div class="box recommended" data-aos="zoom-in" id="loginform" style="background-color: #ff8f1d;">
+              <span class="recommended-badge" style="padding-top: 2%;">推荐</span>
+              <h3>普通会员</h3>
+              <h4><sup>¥</sup>8<span> / 月</span></h4>
+              <ul>
+                <li>浏览展讯 浏览动态</li>
+
+                <li>展讯投稿 收藏夹</li>
+
+                <li>发布动态</li>
+                <li class="na">展览日历</li>
+              </ul>
+              <a href="#">
+                <div class=" btn btn-primary" style="margin-bottom: 6%;">
+                  现在购买
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="100" id="loginform" style="background-color: #ff8f1d;">
+              <h3>高级会员</h3>
+              <h4><sup>¥</sup>15<span> / 月</span></h4>
+              <ul>
+                <li>浏览展讯 浏览动态</li>
+
+                <li>展讯投稿 收藏夹</li>
+
+                <li>发布动态 展览日历 </li>
+
+                <li>线下惊喜活动</li>
+              </ul>
+              <a href="#">
+                <div class="btn btn-secondary" style="margin-bottom: 6%;">
+                  现在购买
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Pricing Section -->
+  </section>
+
+</main><!-- End #main -->
+
+{% endblock %}

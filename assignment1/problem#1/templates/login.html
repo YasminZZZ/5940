@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block header %}
+<header class="masthead" style="background-color: #fac202;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-10 mx-auto" id="exhibitionstitle">
+                <div class="site-heading">
+                    <h1>登陆</h1>
+                    <h1>LOG IN</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+
+ <!-- ======= Pricing Section ======= -->
+<div class="container-fluid" id="loginbody" style="padding-top: 0;">
+ <section id="pricing" class="pricing section-bg">
+  <div class="container">
+
+    <div class="row" style="padding:5%;">
+
+          <div class="col-lg-6 col-md-6" >
+            <div class="box" data-aos="zoom-in" data-aos-delay="100" id="loginform" style="background-color: #ff8f1d;    margin: 0 10% 10% 10%;">
+                 <span class="recommended-badge" style="padding-top: 2%;">目前</span>
+              <h3>免费</h3>
+              <h4><sup>¥</sup>0<span> / month</span></h4>
+              <ul>
+                <li>浏览展讯 浏览动态</li>
+                <li>展讯投稿</li>
+                <li class="na">收藏夹 发布动态</li>
+                <li class="na">展览日历</li>
+              </ul> 
+            </div>
+          </div>
+            
+            {% if msg %}
+    <div class="alert alert-warning" role="alert">{{msg|safe}}</div>
+           {% endif %}
+    <div class="col-lg-6 col-md-6">
+        <div class="form-floating" id="loginform">
+            <form action="/login" method="POST">
+                <div id="formtitle"><h5>登陆</h5></div>
+                <div class="form-group form-floating">
+                    
+                    <input type="text" class="form-control" id="username" placeholder="请输入用户名" name="username">
+                    <label for="username">用户名</label>
+                </div>
+                <div class="form-group form-floating">
+                    
+                    <input type="email" class="form-control" id="email" placeholder="请输入邮箱" name="email">
+                    <label for="email">邮箱</label>
+                </div>
+                <div class="form-group form-floating">
+                    
+                    <input type="password" class="form-control" id="password" placeholder="请输入密码" name="password">
+                    <label for="passworde">密码</label>
+                </div>
+                <input type="hidden" name="next" value="{{ request.args.get('next','') }}" />
+                <div class="d-grid" style="margin: 5%;"><button type="submit" class="btn btn-primary btn-block">登陆</button></div>
+            </form>
+            <div id="formtitle"> <h7>没有账号？<a href="/register"><u>点击注册</u></a></h7></div>
+        </div>
+    </div>
+    
+<div class="row"style="padding:5%;">                   
+            
+      <div class="col-lg-6 col-md-6 mt-4 mt-md-0">
+            <div class="box recommended" data-aos="zoom-in" id="loginform" style="background-color: #ff8f1d;    margin: 10%;">
+              <span class="recommended-badge" style="padding-top: 2%;">推荐</span>
+              <h3>普通会员</h3>
+              <h4><sup>¥</sup>8<span> / 月</span></h4>
+              <ul>
+                <li>浏览展讯 浏览动态</li>
+
+                <li>展讯投稿 收藏夹</li>
+
+                <li>发布动态</li>
+                <li class="na">展览日历</li>
+              </ul>
+              <a href="#">
+                <div class=" btn btn-primary" style="margin-bottom: 6%;">
+                  现在购买
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="100" id="loginform" style="background-color: #ff8f1d;    margin: 10%;">
+              <h3>高级会员</h3>
+              <h4><sup>¥</sup>15<span> / 月</span></h4>
+              <ul>
+                <li>浏览展讯 浏览动态</li>
+
+                <li>展讯投稿 收藏夹</li>
+
+                <li>发布动态 展览日历 </li>
+
+                <li>线下惊喜活动</li>
+              </ul>
+              <a href="#">
+                <div class="btn btn-secondary" style="margin-bottom: 6%;">
+                  现在购买
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+</div>
+
+    
+      </div>
+    </section>       
+    
+</div>
+{% endblock %}

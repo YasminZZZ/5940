@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "e5d43362-770d-4e9b-9f39-e2230c04154c",
+		"name": "ZHONG assignment01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25245466"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "333",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "333",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"1\",\"email\":\"1@demo.com\",\"bio\":\"0\",\"password\":\"111\"}"
+				},
+				"url": {
+					"raw": "http://localhost:9009/api/register?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9009",
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "111",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic bWFyeTpwYXNzd29yZA=="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9009/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9009",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwiZXhwIjoxNjczMjEzNjEyfQ.lWobSNSt1QlWj-O33IA6x7HNa3EzfYWRDsL9DZB7sGw"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic SnVzdGluOnBhc3N3b3Jk"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9028/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9028",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "One User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjc1ODY1Njk5fQ.xbunHTyHV-JeBhNBEvvh1-05DlBavXjq3N0BL_vvWUE"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic bWFyeTpwYXNzd29yZA=="
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9999/api/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"api",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjczMzAwNjM1fQ.5NKjbF15DBelO8At3xE6VtkEG_SkM5CS7hfZJIBldnE"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\":\"go back home.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9999/api/blog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"api",
+						"blog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Blogs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwiZXhwIjoxNjczMjEzNjEyfQ.lWobSNSt1QlWj-O33IA6x7HNa3EzfYWRDsL9DZB7sGw"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic SnVzdGluOnBhc3N3b3Jk"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9028/api/todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9028",
+					"path": [
+						"api",
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Blog",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwiZXhwIjoxNjczMjE4NjY4fQ.8oly83X1tiUD_DsAAOy_i2Zr1WaRHBUEev4kclv-jeQ"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic SnVzdGluOnBhc3N3b3Jk"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9028/api/todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9028",
+					"path": [
+						"api",
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Blog",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwiZXhwIjoxNjczMjEzNjEyfQ.lWobSNSt1QlWj-O33IA6x7HNa3EzfYWRDsL9DZB7sGw"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic SnVzdGluOnBhc3N3b3Jk"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"complete\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9028/api/todo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9028",
+					"path": [
+						"api",
+						"todo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Blog",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjczMzAwNjM1fQ.5NKjbF15DBelO8At3xE6VtkEG_SkM5CS7hfZJIBldnE"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9028/api/todo/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9028",
+					"path": [
+						"api",
+						"todo",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

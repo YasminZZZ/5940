@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block header %}
+<header class="masthead">
+       <div class="container">
+              <div class="row">
+                     <div class="col-lg-12 col-md-10 mx-auto" id="exhibitionstitle">
+                            <div class="site-heading">
+                                   <h1>我的</h1>
+                                   <h1>MY ZONE</h1>
+                            </div>
+                     </div>
+              </div>
+       </div>
+</header>
+<div class="container-fluid" id="detailsearch">
+       <div class="row" style="margin-top:5% ;margin-bottom: 3%;">
+
+              <div class="col-12 row">
+                     <form class="col-4" method="GET"
+                            style="text-align: center;padding: 0;">
+                            <a class="scrollto " href="#geren"><button type="button" class="btn btn-outline-dark" style="width: 100%;">个人信息</button></a>
+                     </form>
+                     <form class="col-4" method="GET"
+                            style="text-align: center;padding: 0;">
+                            <a class="scrollto " href="#shoucang"><button type="button" class="btn btn-outline-dark" style="width: 100%;">收藏夹</button></a>
+                     </form>
+                     <form class="col-4" method="GET"
+                            style="text-align: center;padding: 0;">
+                            <a class="scrollto " href="#dongtai"><button type="button" class="btn btn-outline-dark" style="width: 100%;">已发布动态</button></a>
+                     </form>
+              </div>
+       </div>
+</div>
+{% endblock %}
+{% block content %}
+<!-- Main Content-->
+<div class="container">
+<section id="geren">
+       <div class="row justify-content-evenly">
+              <div class="col-12 col-md-4 card" id="loginform" style="height:fit-content ;">
+                     <div class="card-body">
+                            {% if session.username %}
+                            {% for row in entries %}
+                            <h4>{{ row['username'] }}</h4>
+                            <hr>
+                            <h5><strong>{{ row['email']}}</strong></h5>
+                            <h6 class="text-left">{{ row['bio'] | safe }}</h6>
+                            {% endfor %}
+                            {% else %}
+                            <div class="alert alert-warning" role="alert">Please login first.</div>
+                            {% endif %}
+                     </div>
+              </div>
+              <div class="col-12 col-md-6" id="loginform" style="height:fit-content ;padding: 3%;">
+                     <form action="/profile/{{session.username}}" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                   <h2 style="color: black;margin-bottom: 30px;font-weight: 700;">个人信息</h2>
+                                   <label for="username">用户名</label>
+                                   {% for row in entries %}
+                                   <input type="hidden" class="form-control" id="id" name="id" value="{{row['id']}}">
+                                   <input type="text" class="form-control" id="title" placeholder="Enter username"
+                                          name="username" value="{{row['username']}}">
+                                   <label for="email">邮箱</label>
+                                   <input type="text" class="form-control" id="title" placeholder="Enter email"
+                                          name="email" value="{{row['email']}}">
+                                   <label for="bio" style="margin-bottom: 5%;">关于我</label>
+                                   <textarea class="form-control" id="editor" name="bio" rows="3"
+                                          style="margin-top: 20px;">{{row['bio']}}</textarea>
+                            </div>
+                            {% endfor %}
+                            <center><button type="submit" class="btn btn-primary">提交</button></center>
+                     </form>
+              </div>
+       </div>
+
+</section>
+    <section id="shoucang">
+       <div class="container" style="margin-top: 10%;">
+              <div class="col-12" id="loginform">
+                     <div class="container" style="padding: 3%;">
+                            <h2 style="color: black;margin-bottom: 30px;font-weight: 700;">收藏夹</h2>
+                            </div>
+              </div>
+
+
+              </div>
+       </section>
+<section id="dongtai">
+       <div class="container" style="margin-top: 10%;margin-bottom: 12%;">
+              <div class="col-12" id="loginform">
+                     <div class="container" style="padding: 3%;">
+                            <h2 style="color: black;margin-bottom: 30px;font-weight: 700;">已发布动态</h2>
+                            <div class="row mobile-disabled">
+                                   <div class="col-lg-1"><h5>ID</h5></div>
+                                   <div class="col-lg-4"><h5>标题</h5></div>
+                                   <div class="col-lg-3"><h5>发布日期</h5></div>
+                                   <div class="col-lg-2"></div>
+                                   <div class="col-lg-2"></div>
+                            </div><!-- row -->
+
+
+                            {% for blog in blogs.items %}
+                            <div class="row">
+                                   <div class="col-lg-1"><h6>{{blog.id}}</h6></div>
+                                   <div class="col-lg-4"><h6>{{blog.title}}</h6></div>
+                                   <div class="col-lg-3"><h6>{{blog.post_date.strftime('%m-%d-%Y')}}</h6></div>
+                                   <div class="col-lg-2"><a href="/blog/{{blog.id}}"
+                                                 class="btn btn-secondary pull-right">编辑</a>
+                                   </div>
+                                   <div class="col-lg-2">
+                                          <!--a href="#" class="btn btn-danger">Delete</a-->
+                                          <form action="/blog/{{blog.id}}" method="POST">
+                                                 <input type="hidden" name="title" value="{{blog.title}}">
+                                                 <input type="hidden" name="body" value="{{blog.body}}">
+                                                 <input type="hidden" name="_method" value="DELETE">
+                                                 <button type="submit" class="btn btn-primary">删除</button>
+                                          </form>
+                                   </div>
+                            </div><!-- row -->
+                            {% endfor %}
+
+                            <div class="container" >
+                                   <center>
+                                          <h5 style="margin: 5%;">页码:
+                                                 {% for page in blogs.iter_pages() %}
+                                                 {% if page %}
+                                                 <a href="{{url_for('dashboard')}}/{{ page }}" id="pages">
+                                                        {{ page }}
+                                                 </a>
+                                                 {% else %}
+                                                 ...
+                                                 {% endif %}
+                                                 {% endfor %}
+                                          </h5>
+                                   </center>
+                            </div>
+                     </div>
+              </div>
+       </div>
+</section>
+       <!--container-->
+</div>
+
+       {% endblock %}

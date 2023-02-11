@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block header %}
+{% endblock %}
+{% block content %}
+<div class="container" style="padding-left: 5%;padding-right:5%">
+    {% if msg %}
+    <div class="alert alert-warning" role="alert">{{msg|safe}}</div>
+    {% endif %}
+    <div class="row justify-content-evenly" style="padding: 5%;">
+    <div class="row col-12 col-md-6" id="loginform" style="padding: 5%;">
+        <div class="col">
+            <div class="card" style="border: none;">
+                <div class="card-body" >
+                    {% for blog in blogs %}
+                    <h4>{{ blog['title']|safe}}</h4>
+                    <hr>
+
+                    <h5><strong>{{blog['author']}}</strong></h5>
+
+                    <h6>{{blog.post_date.strftime('%m-%d-%Y')}}</h6>
+
+                    <div id="text" class="text-left">{{ blog['body']| safe}}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--           endrow -->
+    <div class="container col-12 col-md-5" id="loginform" style="padding: 5%;">
+        <div class="comments-area">
+            <h5>{{comment_count}} 条评论</h5>
+            {% for message in comment %}
+            <div class="comment-list">
+                <div class="single-comment justify-content-between d-flex">
+                    <div class="user justify-content-between d-flex">
+                        <div class="desc">
+                            <h6><a href="#">{{message.name}}</a></h6>
+                            <p class="comment">
+                                {{message.message}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="reply-btn">
+                        <!-- <a href="" class="btn-reply text-uppercase">reply</a>  -->
+                    </div>
+                </div>
+            </div><!-- comment-list -->
+            {% endfor %}
+
+        </div><!-- comments-area -->
+
+        <div class="comment-form">
+
+            <form method="POST">
+                <input type="hidden" name="name" class="form-control" id="name" value="{{session.username}}">
+                <div class="form-group form-floating">
+
+                    <textarea name="message" class="form-control mb-10" rows="5" name="message"
+                        placeholder="Messege"></textarea>
+                    <label style="padding-left:5%;">发布评论</label>
+                </div>
+                <center> <button  class="btn btn-primary">提交</button> </center>
+            </form>
+        </div><!-- comments-area -->
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

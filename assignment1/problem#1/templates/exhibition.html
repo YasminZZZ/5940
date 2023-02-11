@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block header %}
+<!-- Page Header-->
+        <header class="masthead">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row" style="max-height: 330px; margin-top: -5%;">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="site-heading">
+                            <h1>exhibition</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+{% endblock %}
+{% block content %}
+        <!-- Main Content-->
+        <div class="container">
+               <form action="/exhibition/{{id}}" method="POST">
+                   <div class="form-group">
+                    <label for="title">Title</label>
+                    {% for entry in entries %}
+                    <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" 
+                           value="{{entry['title']}}">
+                    <label for="body">Body</label>
+                     <textarea class="form-control" id="editor" name="body" rows="3">{{entry['body']}}</textarea>
+                    </div>
+                    {% endfor %}
+                   <input type="hidden" name="_method" value="">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <br>
+        </div>
+        <hr />
+{% endblock %}
