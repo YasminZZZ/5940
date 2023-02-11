@@ -1,29 +1,14 @@
 {
 	"info": {
-		"_postman_id": "e5d43362-770d-4e9b-9f39-e2230c04154c",
+		"_postman_id": "663ebab4-c259-4943-bfe9-dd8dd0221d20",
 		"name": "ZHONG assignment01",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "25245466"
 	},
 	"item": [
 		{
-			"name": "register",
+			"name": "Register",
 			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "333",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "333",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [
 					{
@@ -33,31 +18,25 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"username\":\"1\",\"email\":\"1@demo.com\",\"bio\":\"0\",\"password\":\"111\"}"
+					"raw": "{\"username\":\"4\",\"email\":\"4@demo.com\",\"bio\":\"0\",\"password\":\"444\"}"
 				},
 				"url": {
-					"raw": "http://localhost:9009/api/register?",
+					"raw": "http://localhost:9999/api/register",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9009",
+					"port": "9999",
 					"path": [
 						"api",
 						"register"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": null
-						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "login",
+			"name": "Login",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -93,12 +72,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:9009/api/login",
+					"raw": "http://localhost:9999/api/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9009",
+					"port": "9999",
 					"path": [
 						"api",
 						"login"
@@ -118,20 +97,16 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwiZXhwIjoxNjczMjEzNjEyfQ.lWobSNSt1QlWj-O33IA6x7HNa3EzfYWRDsL9DZB7sGw"
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic SnVzdGluOnBhc3N3b3Jk"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNjc2MTM5OTIzfQ.B1dcffATjZF8Cqcxq1WTMtCmuvqOkVCKlm9O7_9aLMI"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:9028/api/user",
+					"raw": "http://localhost:9999/api/user",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9028",
+					"port": "9999",
 					"path": [
 						"api",
 						"user"
@@ -151,11 +126,7 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjc1ODY1Njk5fQ.xbunHTyHV-JeBhNBEvvh1-05DlBavXjq3N0BL_vvWUE"
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic bWFyeTpwYXNzd29yZA=="
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjc2MTQwMDIzfQ.fT7kWYzCttr2dCLGAOpbrfL-T8FEgqXoRKQtruI_jB0"
 					}
 				],
 				"url": {
@@ -185,12 +156,12 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjczMzAwNjM1fQ.5NKjbF15DBelO8At3xE6VtkEG_SkM5CS7hfZJIBldnE"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjc2MTQwMDIzfQ.fT7kWYzCttr2dCLGAOpbrfL-T8FEgqXoRKQtruI_jB0"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"text\":\"go back home.\"\n}"
+					"raw": "{\n\t\"title\":\"yesyes.\",\n    \"body\":\"nonono.\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:9999/api/blog",
@@ -218,23 +189,19 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwiZXhwIjoxNjczMjEzNjEyfQ.lWobSNSt1QlWj-O33IA6x7HNa3EzfYWRDsL9DZB7sGw"
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic SnVzdGluOnBhc3N3b3Jk"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjc2MTQwMDIzfQ.fT7kWYzCttr2dCLGAOpbrfL-T8FEgqXoRKQtruI_jB0"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:9028/api/todo",
+					"raw": "http://localhost:9999/api/blog",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9028",
+					"port": "9999",
 					"path": [
 						"api",
-						"todo"
+						"blog"
 					]
 				}
 			},
@@ -251,23 +218,20 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwiZXhwIjoxNjczMjE4NjY4fQ.8oly83X1tiUD_DsAAOy_i2Zr1WaRHBUEev4kclv-jeQ"
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic SnVzdGluOnBhc3N3b3Jk"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjc2MTQwMDIzfQ.fT7kWYzCttr2dCLGAOpbrfL-T8FEgqXoRKQtruI_jB0"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:9028/api/todo",
+					"raw": "http://localhost:9999/api/blog/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9028",
+					"port": "9999",
 					"path": [
 						"api",
-						"todo"
+						"blog",
+						"4"
 					]
 				}
 			},
@@ -284,28 +248,24 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwiZXhwIjoxNjczMjEzNjEyfQ.lWobSNSt1QlWj-O33IA6x7HNa3EzfYWRDsL9DZB7sGw"
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic SnVzdGluOnBhc3N3b3Jk"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjc2MTQwMDIzfQ.fT7kWYzCttr2dCLGAOpbrfL-T8FEgqXoRKQtruI_jB0"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"complete\": false\n}"
+					"raw": "{\n\t\"body\": \"updated!\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:9028/api/todo/1",
+					"raw": "http://localhost:9999/api/blog/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9028",
+					"port": "9999",
 					"path": [
 						"api",
-						"todo",
-						"1"
+						"blog",
+						"5"
 					]
 				}
 			},
@@ -322,20 +282,20 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZXhwIjoxNjczMzAwNjM1fQ.5NKjbF15DBelO8At3xE6VtkEG_SkM5CS7hfZJIBldnE"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNjc2MTM5OTIzfQ.B1dcffATjZF8Cqcxq1WTMtCmuvqOkVCKlm9O7_9aLMI"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:9028/api/todo/8",
+					"raw": "http://localhost:9999/api/blog/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9028",
+					"port": "9999",
 					"path": [
 						"api",
-						"todo",
-						"8"
+						"blog",
+						"3"
 					]
 				}
 			},
